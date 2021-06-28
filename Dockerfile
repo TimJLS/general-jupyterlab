@@ -9,7 +9,7 @@ USER root
 
 # Installing basic components
 RUN sudo -E apt-get install -y --no-install-recommends python3-dev default-libmysqlclient-dev build-essential libffi-dev gcc g++ && \
-    sudo -E apt-get install -y --no-install-recommends libsasl2-dev
+    sudo -E apt-get install -y --no-install-recommends libsasl2-dev libldap2-dev
 RUN pip install --no-cache-dir "apache-airflow[${AIRFLOW_BASICS}]==${AIRFLOW_VERSION}" \
         --constraint  "https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
 
